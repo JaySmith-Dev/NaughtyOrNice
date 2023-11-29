@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Page to add a new child to the list -->
+<br>
+<div class="card text-center" style="width: auto;">
+  <div class="card-body">
+    <header>
+      <h2>Add a Child to the Naughty or Nice list:</h2>
+    </header>
+    <br>
+  <form method="POST">
+    <label>Child's Name:
+      <input type="text" name="name">
+    </label>
+    <label>Age:
+      <input type="text" name="age">
+    </label>
+    <label>Gender:
+      <select name="gender" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </label>
+    <label>Address:
+      <input type="text" name="address">
+    </label>
+    <label>Naughty or Nice:
+      <select name="list_status" id="list_status">
+        <option value="Naughty">Naughty</option>
+        <option value="Nice">Nice</option>
+      </select>
+    </label>
+
+    <button type="submit">Add Child</button>
+  </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

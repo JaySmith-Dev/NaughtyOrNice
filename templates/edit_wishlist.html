@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- Page to view and add to wishlist for a particular child -->
+<br>
+<div class="card text-center" style="width: auto;">
+  <div class="card-body">
+  <header>
+  <h2>Edit Wishlist</h2>
+  </header>
+  <br>
+  <form method="POST">
+    <label>Gift:
+      <input type="text" name="gift">
+    </label>
+
+    <button type="submit">Update Wishlist</button>
+  </form>
+  <br>
+
+  <h2>Current Wishlist</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Items on Wishlist</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through all items in the wishlist for a particular child-->
+      {% for wishlist in wishlist %}
+        <tr>
+          <td>{{ wishlist.item }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <br>
+  <a href="{{ url_for('index') }}">Back to list of children</a>
+  <br>
+  </div>
+</div>
+
+{% endblock %}

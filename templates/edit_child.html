@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Page to edit child, i.e. change from naughty to nice list, or remove if required -->
+<br>
+<div class="card text-center" style="width: auto;">
+  <div class="card-body">
+    <header>
+    <h2>Edit the child - {{ children.name }}</h2>
+    </header>
+  <br>
+
+  <form method="POST">
+    <label>Child's Name:
+      <input type="text" name="name" value="{{ children.name }}">
+    </label>
+    <label>Age:
+      <input type="text" name="age" value="{{ children.age }}">
+    </label>
+    <label>Gender:
+      <select name="gender" id="gender">
+        <option>{{ children.gender }}</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </label>
+    <label>Address:
+      <input type="text" name="address" value="{{ children.address }}">
+    </label>
+    <label>Naughty or Nice:
+      <select name="list_status" id="list_status">
+        <option>{{ children.list_status }}</option>
+        <option value="Naughty">Naughty</option>
+        <option value="Nice">Nice</option>
+      </select>
+    </label>
+
+    <br>
+    <br>
+    <button type="submit">Save Changes to Child</button>
+  </form>
+
+  <br>
+  <br>
+  <br>
+  <form action="{{ url_for('remove_child', child_id=children.child_id) }}" method="GET">
+    <button type="submit">Remove Child</button>
+  </form>
+
+  <br>
+  <a href="{{ url_for('index') }}">Back to list of children</a>
+  <br>
+  </div>
+</div>
+
+{% endblock %}

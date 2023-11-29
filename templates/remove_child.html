@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+<div class="card text-center" style="width: auto;">
+  <div class="card-body">
+<header>
+<h2>Are you sure that you want to remove {{ children.name }} from the {{ children.list_status }} list?</h2>
+<br>
+<h2>THIS CANNOT BE UNDONE!</h2>
+</header>
+<br>
+<form method="POST">
+  <button type="submit">Remove {{ children.name }}</button>
+</form>
+
+  </div>
+</div>
+{% endblock %}

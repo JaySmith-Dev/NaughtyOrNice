@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{url_for('static', filename='/css/styles.css')}}">
+      <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
+
+  <!-- <a href="https://www.freepik.com/free-vector/merry-christmas-card-with-santa-must-ride-sleigh_11268453.htm#query=christmas%20santa&position=10&from_view=keyword&track=ais&uuid=13d13544-9690-438c-9ae3-3496fadefab1">Image by jcomp</a> on Freepik -->
+
+  <title>Naughty or Nice</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg border-bottom border-body" data-bs-theme="dark" style="background-color: #ff0a0e;>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}"><img src="{{url_for('static', filename='/images/NaughtyOrNice3.jpg')}}"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('add_child') }}">Add Child</a>
+            </li>
+          </ul>
+        </div>
+        <img src="{{url_for('static', filename='/images/santa.jpg')}}" alt="Santa">
+      </div>
+    </nav>
+  </header>
+
+  
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+
+  <footer class="text-center text-white" style="background-color: #ff0a0e;">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="{{ url_for('index') }}">NaughtyOrNice.com</a> by Jay Smith
+    </div>
+    <!-- Copyright -->
+
+    <!-- >https://github.com/thechinedu/christmas-lights/blob/master/index.html -->
+    
+    <section class="light-bulbs">
+      <div class="light-bulb theme-color-one">
+        <input
+          type="color"
+          class="color-setting hidden"
+          value="#025ba0"
+          data-theme-color="one"
+        />
+      </div>
+      <div class="light-bulb theme-color-two">
+        <input
+          type="color"
+          class="color-setting hidden"
+          value="#9bc72b"
+          data-theme-color="two"
+        />
+      </div>
+      <div class="light-bulb theme-color-three">
+        <input
+          type="color"
+          class="color-setting hidden"
+          value="#f0c517"
+          data-theme-color="three"
+        />
+      </div>
+      <div class="light-bulb theme-color-four">
+        <input
+          type="color"
+          class="color-setting hidden"
+          value="#bf1724"
+          data-theme-color="four"
+        />
+      </div>
+      <div class="light-bulb theme-color-five">
+        <input
+          type="color"
+          class="color-setting hidden"
+          value="#5cc9f4"
+          data-theme-color="five"
+        />
+      </div>
+      <div class="light-bulb theme-color-one">
+        <input
+          type="color"
+          class="color-setting hidden"
+          value="#025ba0"
+          data-theme-color="one"
+        />
+      </div>
+    </section>
+    
+    <section class="light-bulb-settings">
+      <h3>Settings</h3>
+      <div class="group">
+        <label>State:</label>
+        <div class="checkbox-container">
+          <input type="checkbox" class="light-switch" data-elem="switch" />
+        </div>
+        <span class="light-switch-state">off</span>
+      </div>
+
+      <div class="group">
+        <label>Interval:</label>
+        <input
+          class="interval-control"
+          type="number"
+          value="1.1"
+          step="0.1"
+          min="0.1"
+          max="2"
+          data-elem="interval"
+        />
+      </div>
+
+      <button class="color-wheel">Toggle color wheel</button>
+    </section>
+
+  </footer>
+
+  <script src="{{url_for('static', filename='/js/script.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="{{url_for('static', filename='/js/christmas-lights.js')}}"></script>
+
+</body>
+</html>
+
+<!-- https://getbootstrap.com/docs/5.3/components/navbar/#how-it-works -->
